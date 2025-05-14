@@ -3,4 +3,38 @@
     width: 100vw;
     height: 62px;
     border-bottom: 1px solid #374151;
+    display: flex;
+    align-items: center;
+}
+.uil--bars {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M3 8h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2m18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2m0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  margin-left: 2vw;
+  mask-size: 100% 100%;
+  z-index: 2;
+}
+.uil--bars:hover{
+    transition: 200ms;
+    transform: scale(1.1);
+}
+.a{
+    width: 40px;
+    height: 40px;
+    background-color: #374151;
+    border-radius: 100% ;
+    position: absolute;
+    left: 1.55vw;
+    opacity: 0;
+}
+.uil--bars:hover + .a{
+    opacity: 1;
+    transition: 200ms;
 }
