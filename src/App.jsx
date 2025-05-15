@@ -1,5 +1,6 @@
 import './App.css'
-import Header from './extras/header.jsx'
+import "@fontsource/inter";
+import Header from './components/header.jsx'
 
 function App() {
 
