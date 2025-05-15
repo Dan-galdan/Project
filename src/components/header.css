@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    position: fixed;
 }
 .uil--bars {
   display: inline-block;
@@ -101,6 +102,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
 }
 .teneg{
     width: 121px;
@@ -128,4 +130,33 @@
 .teneg:hover{
      background-color: #374151;
      transition: 200ms;
+     cursor: pointer;
+}
+.teneg1{
+    width: 121px;
+    height: 39px;
+    display: flex;
+    background-color: #3B82F6;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding-right: 7px;
+    gap: 3px;
+}
+.teneg1:hover{
+    cursor: pointer;
+    background-color: #1871ff;
+    transition: 200ms;
+}
+.line-md--plus {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23fff' stroke-dasharray='16' stroke-dashoffset='16' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M5 12h14' stroke-dashoffset='0'/%3E%3Cpath d='M12 5v14' stroke-dashoffset='0'/%3E%3C/g%3E%3C/svg%3E");
+}
+.teneg1 p{
+    font-weight: 500;
+    font-size:14px;
 }

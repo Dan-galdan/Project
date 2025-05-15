@@ -10,7 +10,7 @@ function Header(){
                 <span class="uil--bars"></span>
                 <div className='a'></div>
                 <img src={logo} alt="" />
-                <h2  className='imga'>TellU</h2>
+                <h3  className='imga'>TellU</h3>
                 <input type="search" placeholder='Search' className='Searcht' name="" id=""/>
                 <span class="material-symbols--search"></span>
                 <div className='chi'>
@@ -18,8 +18,9 @@ function Header(){
                         <span class="material-symbols--person-rounded"></span>
                         <p>Account</p>
                     </div>
-                    <div>
-                        
+                    <div className='teneg1'>
+                        <span class="line-md--plus"></span>
+                        <p>Create Post</p>
                     </div>
                 </div>
             </div>

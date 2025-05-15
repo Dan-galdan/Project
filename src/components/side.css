@@ -1,0 +1,88 @@
+.seisse{
+    width: 250px;
+    height: 1018px;
+    background-color: #1F2937;
+    border: 1px solid #374151;
+    position: fixed;
+    margin-top: 62px;
+}
+.home{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+}
+#crazy{
+    padding-left: 20px;
+    margin-bottom: -15px;
+    font-size: 14px;
+    color: #fff;
+}
+.hoe{
+    height: 41px;
+    display: flex;
+    align-items: center;
+    width: 178px;
+    margin-left: 26px;
+    font-size: 14px;
+    gap: 15px;
+    padding-left: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.fa-solid--home {
+  display: inline-block;
+  width: 18px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='%233B82F6' d='M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0M571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93'/%3E%3C/svg%3E");
+}
+#ho{
+    background-color: #1E3A8A;
+    color: #3B82F6;
+}
+.hoe:hover{
+    background-color: #374151;
+    transition: 200ms;
+}
+#hoo:hover{
+    background-color: #374151;
+    transition: 200ms;
+}
+.tabler--flame-filled {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23eee' d='M10 2c0-.88 1.056-1.331 1.692-.722c1.958 1.876 3.096 5.995 1.75 9.12l-.08.174l.012.003c.625.133 1.203-.43 2.303-2.173l.14-.224a1 1 0 0 1 1.582-.153C18.733 9.46 20 12.402 20 14.295C20 18.56 16.409 22 12 22s-8-3.44-8-7.706c0-2.252 1.022-4.716 2.632-6.301l.605-.589c.241-.236.434-.43.618-.624C9.285 5.268 10 3.856 10 2'/%3E%3C/svg%3E");
+}
+.solar--medal-ribbon-bold {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23eee' d='M19 9A7 7 0 1 1 5 9a7 7 0 0 1 14 0'/%3E%3Cpath fill='%23eee' d='m7.093 15.941l-.379 1.382c-.628 2.292-.942 3.438-.523 4.065c.147.22.344.396.573.513c.652.332 1.66-.193 3.675-1.243c.67-.35 1.006-.524 1.362-.562a2 2 0 0 1 .398 0c.356.038.691.213 1.362.562c2.015 1.05 3.023 1.575 3.675 1.243c.229-.117.426-.293.573-.513c.42-.627.105-1.773-.523-4.065l-.379-1.382A8.46 8.46 0 0 1 12 17.5a8.46 8.46 0 0 1-4.907-1.559'/%3E%3C/svg%3E");
+}
+.hooo{
+    margin-bottom: 8px;
+}
+.weui--arrow-filled {
+  display: inline-block;
+  width: 12px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 24'%3E%3Cpath fill='%239CA3AF' fill-rule='evenodd' d='M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414'/%3E%3C/svg%3E");
+  transform: rotate(90deg);
+}
+.filter{
+    width: 203px;
+    height: 100px;
+    margin-left: 22px; 
+}
+.filter span{
+    position: absolute;
+    left: 204px;
+    top: 184px;
+}
