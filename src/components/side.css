@@ -9,6 +9,7 @@
 .home{
     display: grid;
     grid-template-rows: auto auto auto auto;
+    gap: 2px;
 }
 #crazy{
     padding-left: 20px;
@@ -20,13 +21,15 @@
     height: 41px;
     display: flex;
     align-items: center;
-    width: 178px;
+    width: 187px;
     margin-left: 26px;
     font-size: 14px;
     gap: 15px;
     padding-left: 20px;
     border-radius: 4px;
     cursor: pointer;
+    background-color: #1F2937;
+    border: none;
 }
 .fa-solid--home {
   display: inline-block;
@@ -43,6 +46,7 @@
 .hoe:hover{
     background-color: #374151;
     transition: 200ms;
+
 }
 #hoo:hover{
     background-color: #374151;

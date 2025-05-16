@@ -2,8 +2,11 @@ import './side.css'
 import "@fontsource/inter/700.css";
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/300.css';
+import { useNavigate } from 'react-router-dom';
 
 function Side(){
+    const navigate = useNavigate();
+
     return(
         <>
             <div className='seisse'>
@@ -12,18 +15,18 @@ function Side(){
                         <h3 className='aasd'>Home</h3>
                     </div>
 
-                    <div className='hoe' id='ho'>
+                    <button className='hoe' id='ho' onClick={() => navigate('/')}>
                             <span class="fa-solid--home"></span>
                             <p>All Schools</p>
-                    </div>                        
-                    <div className='hoe' id='hoo'>
+                    </button>                        
+                    <button className='hoe' id='hoo' onClick={() => navigate('/popular')}>
                         <span class="tabler--flame-filled"></span>
                         <p>Popular</p>
-                    </div>
-                    <div className='hoe' id='hooo'>
+                    </button>
+                    <button className='hoe' id='hooo'>
                         <span class="solar--medal-ribbon-bold"></span>
                         <p>Top Rated</p>
-                    </div>
+                    </button>
                 </div>
                 <div className='filter'>
                     <h3 className='aasd'>Filter</h3>
