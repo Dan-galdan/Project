@@ -78,11 +78,91 @@
 }
 .filter{
     width: 203px;
-    height: 100px;
-    margin-left: 22px; 
+    height: 85px;
+    margin-left: 22px;
 }
 .filter span{
     position: absolute;
-    left: 204px;
-    top: 184px;
+    left: 214px;
+    top: 178px;
+}
+.filter select{ 
+    width: 200px;
+    height: 40px;
+    font-family: 'Inter', sans-serif;
+    background-color: transparent;
+    border: 1px #374151 solid;
+    outline: none;
+    border-radius: 7px;
+    padding-left: 20px;
+      -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+      cursor: pointer;
+    background-color: #1F2937;
+      transition: 0.4s;
+}
+.aaas{
+  background-color: #1F2937;
+  color: #ffffff;
+}   
+#ba{
+    position: absolute;
+    left: 214px;
+    top: 279px;
+}
+.bt{
+    width: 200px;
+    margin-left: 22px;
+}
+.bt p{
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: left;
+    width: 200px;
+}
+.aasd{
+    font-size: medium;
+}
+.po{
+    display: flex;
+    width: 201px;
+    gap: 10px;
+}
+.ao {
+    width: 95.5px;
+    height: 70px;
+    background-color: #374151;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+.fa--group {
+  display: block;
+  width: 23.58px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1792'%3E%3Cpath fill='%233B82F6' d='M593 896q-162 5-265 128H194q-82 0-138-40.5T0 865q0-353 124-353q6 0 43.5 21t97.5 42.5T384 597q67 0 133-23q-5 37-5 66q0 139 81 256m1071 637q0 120-73 189.5t-194 69.5H523q-121 0-194-69.5T256 1533q0-53 3.5-103.5t14-109T300 1212t43-97.5t62-81t85.5-53.5T602 960q10 0 43 21.5t73 48t107 48t135 21.5t135-21.5t107-48t73-48t43-21.5q61 0 111.5 20t85.5 53.5t62 81t43 97.5t26.5 108.5t14 109t3.5 103.5M640 256q0 106-75 181t-181 75t-181-75t-75-181t75-181T384 0t181 75t75 181m704 384q0 159-112.5 271.5T960 1024T688.5 911.5T576 640t112.5-271.5T960 256t271.5 112.5T1344 640m576 225q0 78-56 118.5t-138 40.5h-134q-103-123-265-128q81-117 81-256q0-29-5-66q66 23 133 23q59 0 119-21.5t97.5-42.5t43.5-21q124 0 124 353m-128-609q0 106-75 181t-181 75t-181-75t-75-181t75-181t181-75t181 75t75 181'/%3E%3C/svg%3E");
+  margin: 0 auto;
+}
+.si--chat-fill {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%233B82F6' d='M19 16h-2.525a.99.99 0 0 0-.775.375l-2.925 3.65a1 1 0 0 1-1.562 0l-2.925-3.65A.99.99 0 0 0 7.512 16H5c-1.662 0-3-1.338-3-3V6c0-1.662 1.338-3 3-3h14c1.663 0 3 1.338 3 3v7c0 1.662-1.337 3-3 3'/%3E%3C/svg%3E");
+  margin: 0 auto;
+}
+
+.ao p {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+    text-align: center;
 }

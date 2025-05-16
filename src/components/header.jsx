@@ -2,6 +2,7 @@ import './header.css'
 import logo from './logo.PNG'
 import "@fontsource/inter/700.css";
 import '@fontsource/inter/500.css'
+import '@fontsource/inter/600.css'
 
 function Header(){
     return(
@@ -10,9 +11,12 @@ function Header(){
                 <span class="uil--bars"></span>
                 <div className='a'></div>
                 <img src={logo} alt="" />
-                <h3  className='imga'>TellU</h3>
-                <input type="search" placeholder='Search' className='Searcht' name="" id=""/>
-                <span class="material-symbols--search"></span>
+                <h2 className='inter-imga'>TellU</h2>
+                <div className='sea'>
+                    <input type="search" placeholder="Search" className="Searcht" />
+                    <span class="material-symbols--search-rounded"></span>
+                </div>
+
                 <div className='chi'>
                     <div className='teneg'>
                         <span class="material-symbols--person-rounded"></span>
