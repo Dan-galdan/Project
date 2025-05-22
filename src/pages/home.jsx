@@ -9,13 +9,23 @@ function Home() {
     <>
       <Header/>
       <Side/>
-      <div className='top-word'>
-        <h2>Recent Post</h2>
-        <div className='squaresundbar'>
-          <div className='squares'></div>
-          <span class="heroicons--squares-2x2-solid"></span>
-          <div></div>
-          <span class="pixel--bars-solid"></span>
+      <div className='as'>
+        <div className='headersquare'>
+          <h3>Recent Post</h3>
+          <div className='topSquares'>
+            <div className='topblueSquare'>
+              <span className='heroicons--squares-2x2-solid'></span>
+            </div>
+            <div className='topgreySquare'>
+              <span className='pixel--bars-solid'></span>
+            </div>
+          </div>
+        </div>
+        <div className='general'>
+            <div className='opinion'>
+              <span class="mingcute--arrow-up-fill"></span>
+            </div>
+            <div className='main'> </div>
         </div>
       </div>
     </>
