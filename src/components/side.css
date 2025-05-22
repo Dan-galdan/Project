@@ -4,7 +4,9 @@
     background-color: #1F2937;
     border: 1px solid #374151;
     position: fixed;
-    margin-top: 62px;
+    border-top: none;
+    z-index: 5;
+    top: 62px;
 }
 .home{
     display: grid;
@@ -46,7 +48,6 @@
 .hoe:hover{
     background-color: #374151;
     transition: 200ms;
-
 }
 #hoo:hover{
     background-color: #374151;

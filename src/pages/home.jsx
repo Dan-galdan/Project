@@ -9,6 +9,15 @@ function Home() {
     <>
       <Header/>
       <Side/>
+      <div className='top-word'>
+        <h2>Recent Post</h2>
+        <div className='squaresundbar'>
+          <div className='squares'></div>
+          <span class="heroicons--squares-2x2-solid"></span>
+          <div></div>
+          <span class="pixel--bars-solid"></span>
+        </div>
+      </div>
     </>
   )
 }

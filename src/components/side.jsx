@@ -3,6 +3,7 @@ import "@fontsource/inter/700.css";
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/300.css';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 function Side(){
     const navigate = useNavigate();
@@ -23,7 +24,7 @@ function Side(){
                         <span class="tabler--flame-filled"></span>
                         <p>Popular</p>
                     </button>
-                    <button className='hoe' id='hooo'>
+                    <button className='hoe' id='hooo' onClick={()=> navigate('/top_rated')}>
                         <span class="solar--medal-ribbon-bold"></span>
                         <p>Top Rated</p>
                     </button>
