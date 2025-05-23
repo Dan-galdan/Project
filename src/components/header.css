@@ -88,24 +88,41 @@
     justify-content: center;
     gap: 20px;
 }
-.teneg{
-    width: 121px;
+#teneg{
+    width: 141px;
     height: 39px;
     border: 1px solid #4D5B71;
     border-radius: 10px;
     display: flex;
     align-items: center;
+    background-color: transparent;
     justify-content: center;
     gap: 7px;
-    padding-right: 7px;
+    padding-right: 25px;
+    outline: none;
 }
-.teneg p{
+#teneg p{
     font-weight: 500;
     font-size:14px;
 }
+.visible{
+  width: 308px;
+  height: 329px;
+  background-color: #1F2937;
+  display: block;
+  z-index: 12;
+  position: absolute;
+  right: 212px;
+  top: 69px;
+  border-radius: 10px;
+  border: 1px solid #4D5B71;
+}
+.hidden{
+   display: none;
+}
 .material-symbols--person-rounded {
   display: inline-block;
-  width: 24px;
+  width: 30px;
   height: 24px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -115,16 +132,18 @@
      background-color: #374151;
      transition: 200ms;
      cursor: pointer;
-}
+   border: 1px solid #4D5B71;
+    border-radius: 10px;}
 .teneg1{
-    width: 121px;
+    width: 141px;
     height: 39px;
     display: flex;
     background-color: #3B82F6;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    padding-right: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
     gap: 3px;
 }
 .teneg1:hover{
