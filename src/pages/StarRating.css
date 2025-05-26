@@ -1,0 +1,34 @@
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+
+.star {
+  font-size: 13.5px;
+  background: none;
+  border: none;
+  padding: 0;
+  color: #9CA3AF;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: transform 200ms ease, color 200ms ease;
+}
+
+.star:hover {
+  transform: scale(1.2);
+}
+
+.star.active {
+  color: #FFb000;
+}
+.star:focus-visible{
+  outline: none;
+}
+.star:focus {
+  outline: none; /* suppress for mouse clicks */
+}
