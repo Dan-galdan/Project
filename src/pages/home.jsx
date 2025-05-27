@@ -2,101 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentAlt } from '@fortawesome/free-regular-svg-icons';  
 import { faShareAlt } from '@fortawesome/free-solid-svg-icons'; 
 import './home.css';
+import '../index.css'
 import "@fontsource/inter";
 import '@fontsource/inter/700.css';
 import Header from '../components/header.jsx';
 import Side from '../components/side.jsx';
-import { StarRating } from './StarRating.jsx';
-import { useState } from 'react';
+import {Post} from '../components/post.jsx'
 
-export function Post({ schoolname, postguy, date, postHeader, posttext, commentcount }) {
-  const [count, setCount] = useState(0);
-  const [clicked, setClicked] = useState(false);
-  const [click, setClick] = useState(false);
-  const [postRating, setPostRating] = useState(0);
-  const [showMore, setShowMore] = useState(false);
-
-  const handleUpvote = () => {
-    if (!clicked) {
-      setCount(count + 1);
-      setClicked(true);
-      setClick(false);
-    } else {
-      setCount(count - 1);
-      setClicked(false);
-    }
-  };
-
-  const handleDownvote = () => {
-    if (!click) {
-      setCount(count - 1);
-      setClick(true);
-      setClicked(false);
-    } else {
-      setCount(count + 1);
-      setClick(false);
-    }
-  };
-
-  const arrowStyle = {
-    filter: clicked
-      ? 'invert(43%) sepia(27%) saturate(2929%) hue-rotate(194deg) brightness(99%) contrast(96%)'
-      : 'none',
-  };
-
-  const downarrowStyle = {
-    filter: click
-      ? 'invert(43%) sepia(27%) saturate(2929%) hue-rotate(194deg) brightness(99%) contrast(96%)'
-      : 'none',
-  };
-
-  const MAX_LENGTH = 300;
-  const isLong = posttext.length > MAX_LENGTH;
-  const displayText = showMore ? posttext : posttext.slice(0, MAX_LENGTH);
-
-  return (
-    <div className='general'>
-      <div className='opinion'>
-        <div className='rating'>
-          <span className="mingcute--arrow-up-fill" onClick={handleUpvote} style={arrowStyle}></span>
-          <p className='number'>{count}</p>
-          <span id='downarrow' className="mingcute--arrow-up-fill" onClick={handleDownvote} style={downarrowStyle}></span>
-        </div>
-      </div>
-      <div className='main'>
-        <div className='postguy'>
-          <p>{schoolname}</p>
-          <p>Posted by {postguy} * {date}</p>
-        </div>
-        <h4 className='Postheader'>{postHeader}</h4>
-        <StarRating initialRating={postRating} onRatingChange={setPostRating} />
-        
-        <p className="posttext">
-          {displayText}
-          {isLong && !showMore && <span>...</span>}
-        </p>
-        
-        {isLong && (
-          <button className='readmore' onClick={() => setShowMore(!showMore)}>
-            {showMore ? 'Read Less' : 'Read More'}
-          </button>
-        )}
-
-        <hr className='lineunderreadmore' />
-        <div className='underpost'>
-          <div className='commentpart'>
-            <FontAwesomeIcon className='commenticon' icon={faCommentAlt} /> 
-            <p>{commentcount} comment</p>
-          </div>
-          <div className='commentpart'>
-            <FontAwesomeIcon className='commenticon' icon={faShareAlt} /> 
-            <p>Share</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function Home() {
   return (

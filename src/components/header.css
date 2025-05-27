@@ -170,24 +170,16 @@
   }
 
   .visible{
-    width: 308px;
-    height: 285px;
-    background-color: #1F2937;
-    display: block;
-    z-index: 12;
-    position: absolute;
-    right: 212px;
-    top: 69px;
-    border-radius: 4px;
-    border: 1px solid #374151;
     visibility: visible;
-  transition: 0.3s;
+  transition: 0.3s ease;
+  opacity: 1;
   }   
   .hidden{
     width: 0;
     height: 0;
     font-size: 0;
     visibility: hidden;
+    opacity: 0;
   }
   .Searcht {
     width: 100%;
@@ -207,6 +199,17 @@
     justify-content: center;
     flex-direction: column;
     gap: 5px;
+    width: 308px;
+    height: 285px;
+    background-color: #1F2937;
+    display: block;
+    z-index: 12;
+    position: absolute;
+    right: 212px;
+    top: 69px;
+    border-radius: 4px;
+    border: 1px solid #374151;
+    
   }
   .popup1{
     display: flex;
@@ -216,6 +219,10 @@
     width: 278px;
     height: 100px;
     border-bottom: 1px solid #374151;
+    margin: auto;
+  }
+  .popup2{
+    margin: auto;
   }
   .image{
     width: 70px;
@@ -228,6 +235,9 @@
     height: 34px;
     display: grid;
     align-items: center;
+  }
+  #gt{
+    margin-top: 10px;
   }
   .nameandmail p{
     font-size: 12px;

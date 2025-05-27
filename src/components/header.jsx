@@ -5,7 +5,7 @@ import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
 import '@fontsource/inter/300.css'
 import { useState } from 'react';
-
+import {Create} from './createpost.jsx'
 
 function Header() {
     const [shown, setShown] = useState(true);
@@ -30,10 +30,8 @@ function Header() {
                     <span className="material-symbols--person-rounded"></span>
                     <p>Account</p>
                 </button>
-                <button className='teneg1'>
-                    <span className="line-md--plus"></span>
-                    <p>Create Post</p>
-                </button>
+                <Create/>
+
             </div>
             <div  className={shown ? 'hidden' : 'visible'} >
                 <div className='popup'>
@@ -44,7 +42,7 @@ function Header() {
                             <p>badamdorj@gmail.com</p>
                         </div>
                     </div>
-                    <div className='popup2'>
+                    <div className='popup2' id='gt'>
                         <span class="iconamoon--profile-light"></span>
                         <p>My Profile</p>
                         <span class="weui--arrow-filled"></span>
