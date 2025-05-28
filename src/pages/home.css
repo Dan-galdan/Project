@@ -51,6 +51,7 @@ a:hover {
   position: absolute;
   top: 72px;
   left: 503px;
+  font-size: 18px;
 }
 
 /* Top squares */
@@ -125,7 +126,7 @@ a:hover {
   gap: 0;
 }
 
-.rating > * {
+.rating>* {
   flex-shrink: 0;
 }
 
@@ -257,4 +258,37 @@ a:hover {
 
 #downarrow:hover {
   transform: rotate(180deg) scale(1.2);
+}
+
+@media only screen and (max-width: 1440px) {
+  .headersquare h3 {
+    left: 283px;
+    top: 62px;
+  }
+
+  .headersquare {
+    height: 133px;
+  }
+
+  .topSquares {
+    top: 82px;
+    right: 100px;
+  }
+
+  .topblueSquare,
+  .topgreySquare {
+    width: 38px;
+    height: 34px;
+  }
+
+  .heroicons--squares-2x2-solid {
+    width: 20px;
+    height: 20px;
+  }
+
+  .pixel--bars-solid {
+    width: 16px;
+    height: 16px;
+  }
+
 }

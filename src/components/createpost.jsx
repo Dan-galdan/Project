@@ -73,13 +73,13 @@ export function Create() {
                 <input type="text" id='description' placeholder='Share your school Experience' />
 
                 {showImageField && (
-                  <div className="imagefield">
+                  <div className={`imagefield ${showImageField ? 'active' : ''}`}>
                     <div className='imageheader'>
                       <FontAwesomeIcon className='ico' icon={faImage} />
                       <h4>Images</h4>
                     </div>
                     <div className='imagedrop'>
-                      <FontAwesomeIcon className='uploudcloud' icon={faCloudUpload} />
+                      <FontAwesomeIcon className='uploadcloud' icon={faCloudUpload} />
                       <p>Drag and drop an image or click to upload</p>
                       <button>Upload Image</button>
                     </div>

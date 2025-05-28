@@ -8,14 +8,13 @@
 /* Global reset for outlines */
 *:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Accessible focus ring */
+  /* Accessible focus ring */
 }
 
 /* Ensure buttons don't have browser default outlines */
 button:focus,
 button:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
 }
 
 /* Root and body styles */
@@ -47,7 +46,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Media query for light theme */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

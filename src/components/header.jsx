@@ -5,11 +5,11 @@ import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
 import '@fontsource/inter/300.css'
 import { useState } from 'react';
-import {Create} from './createpost.jsx'
+import { Create } from './createpost.jsx'
 
 function Header() {
     const [shown, setShown] = useState(true);
-    
+
     const handleClick = () => {
         setShown(!shown);
     }
@@ -21,19 +21,19 @@ function Header() {
             <img src={logo} alt="Logo" />
             <h2 className='inter-imga'>TellU</h2>
             <div className='sea'>
-                <input type="search" placeholder="Search" className="Searcht" />
                 <span className="material-symbols--search-rounded"></span>
+                <input type="search" placeholder="Search" className="Searcht" />
             </div>
 
             <div className='chi'>
-                <button id='teneg' onClick={handleClick}> 
+                <button id='teneg' onClick={handleClick}>
                     <span className="material-symbols--person-rounded"></span>
                     <p>Account</p>
                 </button>
-                <Create/>
+                <Create />
 
             </div>
-            <div  className={shown ? 'hidden' : 'visible'} >
+            <div className={shown ? 'hidden' : 'visible'} >
                 <div className='popup'>
                     <div className='popup1'>
                         <div className='image'></div>
