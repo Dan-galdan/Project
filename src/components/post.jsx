@@ -17,17 +17,20 @@ export function StarRating({ initialRating = 0, onRatingChange }) {
   };
 
   return (
-    <div className="star-rating">
+    <div className="star-rating" role="radiogroup" aria-label="Star rating">
       {[...Array(5)].map((_, index) => {
         const ratingValue = index + 1;
         return (
           <button
             key={ratingValue}
+            type="button"
             className={`star ${ratingValue <= (hover || rating) ? 'active' : ''}`}
             onClick={() => handleStarClick(ratingValue)}
             onMouseEnter={() => setHover(ratingValue)}
             onMouseLeave={() => setHover(0)}
             aria-label={`Rate ${ratingValue} star${ratingValue > 1 ? 's' : ''}`}
+            aria-checked={rating === ratingValue}
+            role="radio"
           >
             <FontAwesomeIcon icon={faStar} />
           </button>
@@ -77,19 +80,21 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
   const isLong = posttext.length > MAX_LENGTH;
 
   return (
-    <div className="general">
-      <div className="opinion">
+    <div className="general" role="article" aria-label="Post">
+      <div className="opinion" aria-label="Voting controls">
         <div className="rating">
           <button
             className={`mingcute--arrow-up-fill ${voteStatus === 'up' ? 'active' : ''}`}
             onClick={handleUpvote}
+            aria-pressed={voteStatus === 'up'}
             aria-label="Upvote"
           ></button>
-          <p className="number">{count}</p>
+          <p className="number" aria-live="polite" aria-atomic="true">{count}</p>
           <button
             className={`mingcute--arrow-up-fill ${voteStatus === 'down' ? 'active' : ''}`}
             id="downarrow"
             onClick={handleDownvote}
+            aria-pressed={voteStatus === 'down'}
             aria-label="Downvote"
           ></button>
         </div>
@@ -98,18 +103,19 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
         <div className="postguy">
           <p>{schoolname}</p>
           <p>
-            Posted by {postguy} * {date}
+            Posted by {postguy} &#8226; {date}
           </p>
         </div>
         <h4 className="Postheader">{postHeader}</h4>
         <StarRating initialRating={postRating} onRatingChange={setPostRating} />
         <p className={`posttext ${showMore ? 'expanded' : ''}`}>
-          {posttext}
+          {isLong && !showMore ? `${posttext.slice(0, MAX_LENGTH)}...` : posttext}
         </p>
         {isLong && (
           <button
             className="readmore"
             onClick={handleToggleShowMore}
+            aria-expanded={showMore}
             aria-label={showMore ? 'Show less content' : 'Show more content'}
           >
             {showMore ? 'Read Less' : 'Read More'}
@@ -117,11 +123,11 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
         )}
         <hr className="lineunderreadmore" />
         <div className="underpost">
-          <div className="commentpart">
+          <div className="commentpart" role="button" tabIndex={0} aria-label={`${commentcount} comments`}>
             <FontAwesomeIcon className="commenticon" icon={faCommentAlt} />
             <p>{commentcount} comment{commentcount !== 1 ? 's' : ''}</p>
           </div>
-          <div className="commentpart">
+          <div className="commentpart" role="button" tabIndex={0} aria-label="Share post">
             <FontAwesomeIcon className="commenticon" icon={faShareAlt} />
             <p>Share</p>
           </div>
