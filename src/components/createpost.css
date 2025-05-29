@@ -300,3 +300,68 @@
   background: #587f8f;
   transition: 200ms;
 }
+
+.identity {
+  background-color: #384253;
+  width: 549px;
+  border-radius: 10px;
+  display: flex;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.bu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: calc(inherit - 24px);
+}
+
+.bu img {
+  border-radius: 100%;
+  width: 40px;
+  height: auto;
+}
+
+.anonname {
+  width: 459px;
+  height: 43px;
+  border-radius: 10px;
+  border: 1px solid #596983;
+  background-color: #1a222e;
+  color: #374151;
+  font-size: 0.9vw;
+  padding-left: 12px;
+}
+
+.anonname:focus {
+  border-bottom: 1px solid #2952c2;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.anon {
+  margin-left: 12px;
+}
+
+.bruh {
+  display: flex;
+  margin-top: -10px;
+  gap: 4px;
+}
+
+.postparent {
+  height: 44px;
+  width: 469px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.postparent button {
+  width: 150px;
+  font-size: 18px;
+  background-color: #3b82f6;
+}
