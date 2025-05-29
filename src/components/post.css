@@ -81,8 +81,6 @@
   flex-direction: column;
   height: fit-content;
   width: fit-content;
-  align-items: center;
-  background-color: #2E7BF6;
   padding-left: 0px;
   gap: 0;
 }
