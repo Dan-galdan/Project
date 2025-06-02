@@ -1,16 +1,17 @@
-import './Popular.css'
-import "@fontsource/inter";
-import Header from '../components/header.jsx'
+import './Popular.css';
+import './home.css';
+import '@fontsource/inter';
+import Header from '../components/header.jsx';
 import Side from '../components/side.jsx';
 
 function Popular() {
   return (
-    <>
-      <Header/>
-      <Side/>
-      you mom
-    </>
-  )
+    <div className="page">
+      <Header />
+      <Side />
+      <div>Popular Content</div>
+    </div>
+  );
 }
 
-export default Popular
+export default Popular;

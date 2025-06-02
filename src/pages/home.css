@@ -55,34 +55,6 @@ a:hover {
   font-size: 18px;
 }
 
-/* Top squares */
-.topSquares {
-  display: flex;
-  position: absolute;
-  top: 85px;
-  right: 240px;
-}
-
-.topblueSquare,
-.topgreySquare {
-  width: 43px;
-  height: 35px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.topblueSquare {
-  background-color: #3B82F6;
-  border-radius: 8px 0 0 8px;
-}
-
-.topgreySquare {
-  background-color: #374151;
-  border-radius: 0 8px 8px 0;
-}
-
 /* General post styles */
 .opinion {
   width: 48px;

@@ -11,17 +11,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 300ms ease, visibility 300ms ease;
 }
 
-.blur.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Postfield with animation */
+/* Postfield */
 .postfield {
   width: 600px;
   height: calc(100vh - 50px - 62px);
@@ -29,25 +21,16 @@
   background-color: #1a222e;
   border-radius: 10px;
   gap: 20px;
-  transform: scale(0.95);
-  opacity: 0;
-  transition: transform 300ms ease, opacity 300ms ease, box-shadow 300ms ease;
   overflow-y: hidden;
   overflow-x: hidden;
   position: absolute;
   top: 62px;
   box-sizing: border-box;
+  transition: opacity 0.3s ease;
 }
 
 .postfield:hover {
   overflow-y: scroll;
-  transition: 200ms;
-}
-
-.blur.show .postfield {
-  transform: scale(1);
-  opacity: 1;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Postfield header */
@@ -239,14 +222,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 300ms ease, transform 300ms ease;
-}
-
-.imagefield.active .imagedrop {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .uploadcloud {

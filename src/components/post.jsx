@@ -45,6 +45,7 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
   const [count, setCount] = useState(0);
   const [postRating, setPostRating] = useState(0);
   const [showMore, setShowMore] = useState(false);
+  const [showComment, setShowComment] = useState(false)
 
   const handleUpvote = () => {
     if (voteStatus === 'up') {
@@ -78,6 +79,7 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
 
   const MAX_LENGTH = 300;
   const isLong = posttext.length > MAX_LENGTH;
+
 
   return (
     <div className="general" role="article" aria-label="Post">
@@ -132,6 +134,7 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
             <p>Share</p>
           </div>
         </div>
+        <div className='allcomments'></div>
       </div>
     </div>
   );

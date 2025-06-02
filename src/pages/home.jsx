@@ -1,13 +1,13 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
-import { faCommentAlt } from '@fortawesome/free-regular-svg-icons';  
-import { faShareAlt } from '@fortawesome/free-solid-svg-icons'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCommentAlt } from '@fortawesome/free-regular-svg-icons';
+import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import './home.css';
 import '../index.css'
 import "@fontsource/inter";
 import '@fontsource/inter/700.css';
 import Header from '../components/header.jsx';
 import Side from '../components/side.jsx';
-import {Post} from '../components/post.jsx'
+import { Post } from '../components/post.jsx'
 
 
 function Home() {
@@ -18,14 +18,6 @@ function Home() {
       <div className='as'>
         <div className='headersquare'>
           <h3>Recent Post</h3>
-          <div className='topSquares'>
-            <div className='topblueSquare'>
-              <span className='heroicons--squares-2x2-solid'></span>
-            </div>
-            <div className='topgreySquare'>
-              <span className='pixel--bars-solid'></span>
-            </div>
-          </div>
         </div>
 
         <Post
