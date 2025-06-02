@@ -1,12 +1,13 @@
 .seisse {
     width: 250px;
-    height: 1018px;
+    height: 100vh;
     background-color: #1F2937;
     border: 1px solid #374151;
     position: fixed;
     border-top: none;
     z-index: 5;
     top: 62px;
+    overflow: hidden;
 }
 
 .home {
@@ -239,5 +240,11 @@
 
     .bt {
         margin-left: 15px;
+    }
+}
+
+@media only screen and (min-width:1800px) and (max-width: 1920px) {
+    .as {
+        margin-left: 500px;
     }
 }
