@@ -4,6 +4,7 @@ import { faShareAlt, faStar } from '@fortawesome/free-solid-svg-icons';
 import './post.css';
 import '@fontsource/inter/700.css';
 import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export function StarRating({ initialRating = 0, onRatingChange }) {
   const [rating, setRating] = useState(initialRating);
@@ -41,11 +42,11 @@ export function StarRating({ initialRating = 0, onRatingChange }) {
 }
 
 export function Post({ schoolname, postguy, date, postHeader, posttext, commentcount }) {
-  const [voteStatus, setVoteStatus] = useState(null); // 'up', 'down', or null
+  const [voteStatus, setVoteStatus] = useState(null);
   const [count, setCount] = useState(0);
   const [postRating, setPostRating] = useState(0);
   const [showMore, setShowMore] = useState(false);
-  const [showComment, setShowComment] = useState(false)
+  const [showComment, setShowComment] = useState(false);
 
   const handleUpvote = () => {
     if (voteStatus === 'up') {
@@ -80,7 +81,6 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
   const MAX_LENGTH = 300;
   const isLong = posttext.length > MAX_LENGTH;
 
-
   return (
     <div className="general" role="article" aria-label="Post">
       <div className="opinion" aria-label="Voting controls">
@@ -101,18 +101,20 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
           ></button>
         </div>
       </div>
+
       <div className="main">
         <div className="postguy">
           <p>{schoolname}</p>
-          <p>
-            Posted by {postguy} &#8226; {date}
-          </p>
+          <p>Posted by {postguy} &#8226; {date}</p>
         </div>
+
         <h4 className="Postheader">{postHeader}</h4>
         <StarRating initialRating={postRating} onRatingChange={setPostRating} />
+
         <p className={`posttext ${showMore ? 'expanded' : ''}`}>
           {isLong && !showMore ? `${posttext.slice(0, MAX_LENGTH)}...` : posttext}
         </p>
+
         {isLong && (
           <button
             className="readmore"
@@ -123,9 +125,17 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
             {showMore ? 'Read Less' : 'Read More'}
           </button>
         )}
+
         <hr className="lineunderreadmore" />
+
         <div className="underpost">
-          <div className="commentpart" role="button" tabIndex={0} aria-label={`${commentcount} comments`}>
+          <div
+            className="commentpart"
+            role="button"
+            tabIndex={0}
+            onClick={() => setShowComment((prev) => !prev)}
+            aria-label={`${commentcount} comments`}
+          >
             <FontAwesomeIcon className="commenticon" icon={faCommentAlt} />
             <p>{commentcount} comment{commentcount !== 1 ? 's' : ''}</p>
           </div>
@@ -134,7 +144,34 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
             <p>Share</p>
           </div>
         </div>
-        <div className='allcomments'></div>
+
+        <AnimatePresence>
+          {showComment && (
+            <motion.div
+              className="allcomment"
+              initial={{ opacity: 0, height: 0, y: -20 }}
+              animate={{ opacity: 1, height: 'auto', y: 0 }}
+              exit={{ opacity: 0, height: 0, y: -20 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
+            >
+              <div className='commentexample'>
+                <div className='commentTop'>
+                  <p id="Name">Mai Willy</p>
+                  <p id='date'>{date}</p>
+                </div>
+                <div className="comments">
+                  <p>
+                    I mag das Schule. Ich stimme deshalb die Schule is ziemlich schon.
+                  </p>
+                </div>
+              </div>
+              <div className='commentPost'>
+                <input type="text" placeholder='Add a comment..' />
+                <button>Post</button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
