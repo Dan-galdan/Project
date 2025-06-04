@@ -78,11 +78,21 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
     setShowMore(!showMore);
   };
 
+  const handleToggleComments = () => {
+    setShowComment(!showComment);
+  };
+
   const MAX_LENGTH = 300;
   const isLong = posttext.length > MAX_LENGTH;
 
   return (
-    <div className="general" role="article" aria-label="Post">
+    <div
+      className="general"
+      role="article"
+      aria-label="Post"
+      layout
+      layoutTransition={{ duration: 0.4, ease: "easeInOut", type: "tween" }}
+    >
       <div className="opinion" aria-label="Voting controls">
         <div className="rating">
           <button

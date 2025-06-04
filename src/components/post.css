@@ -200,12 +200,12 @@
 .star-rating {
   display: flex;
   align-items: center;
-  gap: 0.208vw;
-  margin: 4px 0 10px 0;
+  gap: 1px;
+  margin: 4px 0 4px 0;
 }
 
 .star {
-  font-size: 0.781vw;
+  font-size: 0.681vw;
   background: none;
   border: none;
   padding: 0;
@@ -269,7 +269,6 @@
 
 .allcomment {
   padding-top: 0.5rem;
-  border-top: 1px solid #374151;
   width: 99%;
   height: fit-content;
   margin-top: 4px;

@@ -16,12 +16,12 @@
 /* Postfield */
 .postfield {
   width: 600px;
-  height: calc(100vh - 50px - 62px);
-  max-height: 100%;
+  height: fit-content;
+  max-height: calc(100vh - 50px - 62px);
   background-color: #1a222e;
   border-radius: 10px;
   gap: 20px;
-  overflow-y: hidden;
+  overflow-y: auto;
   overflow-x: hidden;
   position: absolute;
   top: 62px;
@@ -306,7 +306,7 @@
   border: 1px solid #596983;
   background-color: #1a222e;
   color: #374151;
-  font-size: 0.9vw;
+  font-size: 14px;
   padding-left: 12px;
 }
 
@@ -339,4 +339,9 @@
   width: 150px;
   font-size: 18px;
   background-color: #3b82f6;
+}
+.allcommen{
+  width: inherit;
+  height: fit-content; 
+  border-top: 1px solid #374151;
 }
