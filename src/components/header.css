@@ -39,7 +39,7 @@
   background-color: #374151;
   border-radius: 100%;
   position: absolute;
-  left: 1.4vw;
+  left: 1.5vw;
   opacity: 0;
 }
 
@@ -83,6 +83,23 @@
   background-color: #1a222e;
   border: 2px solid rgb(0, 70, 128);
   transition: 300ms;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Pulsating focus animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.7);
+  }
+
+  100% {
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+  }
 }
 
 .chi {

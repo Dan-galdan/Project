@@ -200,12 +200,12 @@
 .star-rating {
   display: flex;
   align-items: center;
-  gap: 0.208vw;
-  margin: 4px 0 10px 0;
+  gap: 1px;
+  margin: 4px 0 4px 0;
 }
 
 .star {
-  font-size: 0.781vw;
+  font-size: 0.681vw;
   background: none;
   border: none;
   padding: 0;
@@ -269,7 +269,82 @@
 
 .allcomment {
   padding-top: 0.5rem;
-  border-top: 1px solid #374151;
   width: 99%;
   height: fit-content;
+}
+.commentsflied{
+  width: inherit;
+  height: fit-content;
+  margin-top: 12px;
+}
+.commentexample{
+  background-color: #374151;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.commentexample p{
+  font-size: 13px;
+}
+.commentname{
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  padding: 0;
+}
+.commentname p{
+  margin: 0;
+  color: #9CA3AF;
+}
+#fist{
+  font-weight: 600;
+    color: whitesmoke;
+}
+.lineoncomment{
+  background-color: #374151;
+  border: none;
+  width: inherit;
+  height: 1px;
+}
+.commentposting{
+  width: inherit;
+  height: fit-content;
+  display: flex;
+  gap: 10px;
+}
+.commentposting input{
+  width: 95%;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #374151;
+  padding-left: 14px;
+  font-family: 'Inter';
+}
+.commentposting button{
+  background-color: #367ff3;
+  transition: 200ms;
+  border: none;
+}
+.commentposting button:hover{
+  background-color: #1d71f8;
+  transition: 200ms;
+}
+.commentposting input:focus {
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Pulsating focus animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.7);
+  }
+
+  100% {
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+  }
 }
