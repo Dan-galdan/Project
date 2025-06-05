@@ -10,14 +10,25 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    will-change: opacity, transform; /* Optimize animations */
+    will-change: opacity, transform;
+    /* Optimize animations */
+}
+
+input,
+input:focus,
+input:focus-visible,
+input:active {
+    outline: none;
+    border: none;
 }
 
 .loginPopup {
     position: absolute;
     top: 80px;
     width: 600px;
-    height: 410px;
+    height: fit-content;
+    min-height: 410px;
+    max-height: 90%;
     border-radius: 10px;
     background-color: #1f2937;
     z-index: 1001;
@@ -91,13 +102,13 @@
     font-weight: 600;
 }
 
-.loginForm input {
+input {
     width: 552px;
     height: 43px;
     margin: 0;
     border-radius: 8px;
     font-family: "Inter";
-    color: #374151;
+    color: #cccccc;
     font-size: 14px;
     padding-left: 12px;
     background-color: transparent;
@@ -106,19 +117,22 @@
     box-sizing: border-box;
 }
 
-.loginForm input:focus {
+input:focus {
     border: 1px solid #2952c2;
     box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5);
     animation: pulse 1.5s infinite ease-in-out;
+    color: whitesmoke;
 }
 
 @keyframes pulse {
     0% {
         box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
     }
+
     50% {
         box-shadow: 0 0 12px rgba(59, 130, 246, 0.7);
     }
+
     100% {
         box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
     }
@@ -129,7 +143,8 @@
 }
 
 #for {
-    width: 552px; /* Match other input */
+    width: 552px;
+    /* Match other input */
 }
 
 .loginFor {
@@ -144,7 +159,8 @@
 .remember-me {
     display: flex;
     align-items: center;
-    gap: 8px; /* Closer spacing between checkbox and text */
+    gap: 8px;
+    /* Closer spacing between checkbox and text */
 }
 
 .remember-me input {
@@ -168,7 +184,8 @@
 .forget-password:hover {
     text-decoration: underline;
 }
-.loginBtn{
+
+.loginBtn {
     width: 552px;
     height: 39px;
     background-color: #3b82f6;
@@ -177,25 +194,120 @@
     align-items: center;
     justify-content: center;
 }
-.loginBtn:hover{
+
+.loginBtn:hover {
     background-color: #3579e7;
     transition: 200ms;
 }
-.bottomtext{
+
+.bottomtext {
     display: flex;
     font-size: 14px;
     height: 63px;
     align-items: center;
     justify-content: center;
-        gap: 5px;
+    gap: 5px;
     width: 552px;
 }
-.bottomtext p{
+
+.bottomtext p {
     margin: 0;
 
 }
-.bottomtext span{
+
+.bottomtext span {
     color: #3b82f6;
     cursor: pointer;
     text-decoration: underline;
+}
+
+.signupForm {
+    display: flex;
+    gap: 16px;
+    margin: 0;
+}
+
+.names {
+    margin: 0;
+    padding: 0;
+}
+
+.names input {
+    width: 268.5px;
+    height: 43px;
+    border: 1px solid #374151;
+    font-size: 14px;
+    font-family: "Inter";
+    outline: none;
+}
+
+.names input:focus {
+    border: 1px solid #2952c2;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5);
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.loginMain h2 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.bro {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.bro input {
+    flex: 1;
+    padding-right: 40px;
+    margin-bottom: 8px;
+}
+
+
+.eye-icon {
+    position: absolute;
+    top: 45%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #adadad;
+    font-size: 18px;
+}
+
+select#role {
+    width: 552px;
+    height: 39px;
+    /* Removed space between 39 and px */
+    margin: 0;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    /* Added fallback font */
+    color: #374151;
+    font-size: 14px;
+    padding: 10px 12px;
+    background-color: transparent;
+    border: 1px solid #374151;
+    box-sizing: border-box;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px 16px;
+    color: #adadad;
+}
+
+select#role:focus {
+    border: 1px solid #2952c2;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5);
+    animation: pulse 1.5s infinite ease-in-out;
+    color: whitesmoke;
+    /* Ensure this color contrasts well with the background */
+}
+
+.optionRole {
+    margin: 10px 0px 8px 0;
+}
+
+#fick {
+    margin-top: 16px;
 }

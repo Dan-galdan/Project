@@ -6,29 +6,29 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/300.css';
 import { useState, useEffect, useRef } from 'react';
 import { Create } from './createpost.jsx';
-import Login from './login.jsx';
+import LoginSignup from './loginSignup.jsx';
 import { AnimatePresence, motion } from 'framer-motion';
 
 function Header() {
-    const [shown, setShown] = useState(false); // For profile popup
-    const [visible, setVisible] = useState(false); // For login component
-    const popupRef = useRef(null); // Ref for profile popup
-    const loginRef = useRef(null); // Ref for login popup content
+    const [shown, setShown] = useState(false);        // Profile menu
+    const [visible, setVisible] = useState(false);    // Login/Signup modal
+    const popupRef = useRef(null);
+    const loginRef = useRef(null);
 
     const handleClick = () => {
-        setShown(!shown); // Toggle profile popup
+        setShown(!shown);       // Toggle profile menu
     };
 
     const handleLogin = () => {
-        setVisible(!visible); // Toggle login component
-        setShown(false); // Close profile popup when opening login
+        setVisible(true);       // Show Login/Signup
+        setShown(false);        // Close profile menu
     };
 
     const handleClosePopup = () => {
-        setShown(false); // Close profile popup
+        setShown(false);        // Hide profile menu
     };
 
-    // Handle clicks outside popup or login
+    // Close on outside click
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (
@@ -54,6 +54,7 @@ function Header() {
             <div className="a"></div>
             <img src={logo} alt="Logo" />
             <h2 className="inter-imga">TellU</h2>
+
             <div className="sea">
                 <span className="material-symbols--search-rounded"></span>
                 <input type="search" placeholder="Search" className="Searcht" />
@@ -111,8 +112,9 @@ function Header() {
                     </>
                 )}
             </AnimatePresence>
+
             <AnimatePresence>
-                {visible && <Login loginRef={loginRef} setVisible={setVisible} />}
+                {visible && <LoginSignup loginRef={loginRef} setVisible={setVisible} />}
             </AnimatePresence>
         </div>
     );
