@@ -322,9 +322,32 @@
 
 .bruh {
   display: flex;
-  margin-top: -10px;
-  gap: 4px;
+  align-items: center;
+  /* Align checkbox and text vertically */
+  margin-top: 10px;
+  /* Add some space above */
 }
+
+.bruh input[type="checkbox"] {
+  width: 17px;
+  /* Set a specific width */
+  height: 17px;
+  /* Set a specific height */
+  margin-right: 8px;
+  /* Space between checkbox and label */
+  cursor: pointer;
+  /* Change cursor to pointer on hover */
+}
+
+.bruh p {
+  color: #ffffff;
+  /* Change text color to white for better visibility */
+  font-size: 14px;
+  /* Set font size */
+  margin: 0;
+  /* Remove default margin */
+}
+
 
 .postparent {
   height: 44px;
@@ -340,8 +363,9 @@
   font-size: 18px;
   background-color: #3b82f6;
 }
-.allcommen{
+
+.allcommen {
   width: inherit;
-  height: fit-content; 
+  height: fit-content;
   border-top: 1px solid #374151;
 }

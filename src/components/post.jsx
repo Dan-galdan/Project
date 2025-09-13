@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentAlt } from '@fortawesome/free-regular-svg-icons';
-import { faShareAlt, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faShareAlt, faStar, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import './post.css';
 import '@fontsource/inter/700.css';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
+// StarRating component remains untouched as per your request
 export function StarRating({ initialRating = 0, onRatingChange }) {
   const [rating, setRating] = useState(initialRating);
   const [hover, setHover] = useState(0);
@@ -41,12 +42,47 @@ export function StarRating({ initialRating = 0, onRatingChange }) {
   );
 }
 
+// Fixed Comment component with return statement and date prop
+const Comment = ({ comment, date }) => {
+  return (
+    <div className="commentexample">
+      <div className="commentTop">
+        <p id="Name">Mai Willy</p>
+        <p id="date">{date}</p>
+      </div>
+      <div className="comments">
+        <p>{comment || "No comment text"}</p>
+      </div>
+    </div>
+  );
+};
+
 export function Post({ schoolname, postguy, date, postHeader, posttext, commentcount }) {
   const [voteStatus, setVoteStatus] = useState(null);
   const [count, setCount] = useState(0);
   const [postRating, setPostRating] = useState(0);
   const [showMore, setShowMore] = useState(false);
   const [showComment, setShowComment] = useState(false);
+  const [youWrote, setYouWrote] = useState("");
+  const [comments, setComments] = useState([]); // Store comments as an array
+
+  const handleChange = (event) => {
+    setYouWrote(event.target.value);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && youWrote.trim()) {
+      setComments([...comments, { text: youWrote, date: new Date().toLocaleString('en-US', { timeZone: 'Asia/Singapore' }) }]);
+      setYouWrote(""); // Clear input after posting
+    }
+  };
+
+  const DivCountGObbr = () => {
+    if (youWrote.trim()) {
+      setComments([...comments, { text: youWrote, date: new Date().toLocaleString('en-US', { timeZone: 'Asia/Singapore' }) }]);
+      setYouWrote(""); // Clear input after posting
+    }
+  };
 
   const handleUpvote = () => {
     if (voteStatus === 'up') {
@@ -90,8 +126,6 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
       className="general"
       role="article"
       aria-label="Post"
-      layout
-      layoutTransition={{ duration: 0.4, ease: "easeInOut", type: "tween" }}
     >
       <div className="opinion" aria-label="Voting controls">
         <div className="rating">
@@ -143,11 +177,11 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
             className="commentpart"
             role="button"
             tabIndex={0}
-            onClick={() => setShowComment((prev) => !prev)}
-            aria-label={`${commentcount} comments`}
+            onClick={handleToggleComments}
+            aria-label={`${comments.length || commentcount} comments`}
           >
             <FontAwesomeIcon className="commenticon" icon={faCommentAlt} />
-            <p>{commentcount} comment{commentcount !== 1 ? 's' : ''}</p>
+            <p>{comments.length || commentcount} comment{(comments.length || commentcount) !== 1 ? 's' : ''}</p>
           </div>
           <div className="commentpart" role="button" tabIndex={0} aria-label="Share post">
             <FontAwesomeIcon className="commenticon" icon={faShareAlt} />
@@ -164,20 +198,19 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
               exit={{ opacity: 0, height: 0, y: -20 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
             >
-              <div className='commentexample'>
-                <div className='commentTop'>
-                  <p id="Name">Mai Willy</p>
-                  <p id='date'>{date}</p>
-                </div>
-                <div className="comments">
-                  <p>
-                    I mag das Schule. Ich stimme deshalb die Schule is ziemlich schon.
-                  </p>
-                </div>
-              </div>
-              <div className='commentPost'>
-                <input type="text" placeholder='Add a comment..' />
-                <button>Post</button>
+
+              {comments.map((comment, index) => (
+                <Comment key={index} comment={comment.text} date={comment.date} />
+              ))}
+              <div className="commentPost">
+                <input
+                  type="text"
+                  value={youWrote}
+                  onKeyDown={handleKeyDown}
+                  onChange={handleChange}
+                  placeholder="Add a comment..."
+                />
+                <button onClick={DivCountGObbr}>Post</button>
               </div>
             </motion.div>
           )}

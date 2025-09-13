@@ -126,7 +126,7 @@ export function Create() {
                   <div className="anon">
                     <input className="anonname" type="text" placeholder="Your Name (Optional)" />
                     <div className="bruh">
-                      <input type="checkbox" />
+                      <input type="checkbox" id="anonymous" />
                       <p>Post Anonymously</p>
                     </div>
                   </div>
