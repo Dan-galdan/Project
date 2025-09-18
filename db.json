@@ -8,6 +8,15 @@
       "password": "da",
       "role": "student",
       "createdAt": "2025-09-18T01:00:44.288Z"
+    },
+    {
+      "id": "848a",
+      "firstName": "Katz",
+      "lastName": "Galdan",
+      "email": "danielgaldan9@gmail.com",
+      "password": "Gal89118105",
+      "role": "student",
+      "createdAt": "2025-09-18T01:14:35.126Z"
     }
   ]
 }

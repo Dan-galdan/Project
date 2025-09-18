@@ -9,6 +9,8 @@ function LoginSignup({ loginRef, setVisible }) {
     const [activeTab, setActiveTab] = useState('login');
     const [loginPasswordVisible, setLoginPasswordVisible] = useState(false);
     const [signupPasswordVisible, setSignupPasswordVisible] = useState(false);
+    const [rememberMe, setRememberMe] = useState(false);
+
 
     // 🔹 Login state
     const [loginEmail, setLoginEmail] = useState('');
@@ -29,10 +31,19 @@ function LoginSignup({ loginRef, setVisible }) {
 
     // 🔹 Save new user to db.json
     const handleSignup = async () => {
+        // 1️⃣ Make sure all fields are filled
         if (!firstName || !lastName || !signupEmail || !signupPassword) {
             alert("Please fill in all fields");
             return;
         }
+
+        // 2️⃣ Check password length
+        if (signupPassword.length < 8) {
+            alert("Password must be at least 8 characters long");
+            return;
+        }
+
+        // 3️⃣ Check password match
         if (signupPassword !== confirmPassword) {
             alert("Passwords do not match");
             return;
@@ -57,7 +68,6 @@ function LoginSignup({ loginRef, setVisible }) {
             if (res.ok) {
                 alert("User registered successfully!");
                 setActiveTab("login");
-                // 🚫 Don't close yet — must log in first
             } else {
                 alert("Failed to register user.");
             }
@@ -65,6 +75,7 @@ function LoginSignup({ loginRef, setVisible }) {
             console.error("Signup error:", err);
         }
     };
+
 
     // 🔹 Dummy login (just checks db.json)
     const handleLogin = async () => {
@@ -74,7 +85,14 @@ function LoginSignup({ loginRef, setVisible }) {
 
             if (users.length > 0) {
                 alert("Login successful!");
-                handleClose(); // ✅ only close after successful login
+
+                if (rememberMe) {
+                    localStorage.setItem("user", JSON.stringify(users[0]));
+                } else {
+                    sessionStorage.setItem("user", JSON.stringify(users[0]));
+                }
+
+                handleClose();
             } else {
                 alert("Invalid email or password");
             }
@@ -82,6 +100,8 @@ function LoginSignup({ loginRef, setVisible }) {
             console.error("Login error:", err);
         }
     };
+
+
 
     return (
         <AnimatePresence mode="wait">
@@ -146,7 +166,12 @@ function LoginSignup({ loginRef, setVisible }) {
                                 </div>
                                 <div className="loginFor">
                                     <div className="remember-me">
-                                        <input type="checkbox" id="remember" />
+                                        <input
+                                            type="checkbox"
+                                            id="remember"
+                                            checked={rememberMe}
+                                            onChange={(e) => setRememberMe(e.target.checked)}
+                                        />
                                         <label htmlFor="remember">Remember me</label>
                                     </div>
                                     <a href="#" className="forget-password">Forget Password?</a>
