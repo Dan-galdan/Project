@@ -65,6 +65,7 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
   const [showComment, setShowComment] = useState(false);
   const [youWrote, setYouWrote] = useState("");
   const [comments, setComments] = useState([]); // Store comments as an array
+  const [visibleCount, setVisibleCount] = useState(4); // Number of comments to show initially
 
   const handleChange = (event) => {
     setYouWrote(event.target.value);
@@ -199,10 +200,15 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
               transition={{ duration: 0.25, ease: 'easeOut' }}
             >
 
-              {comments.map((comment, index) => (
+              {comments.slice(0, visibleCount).map((comment, index) => (
                 <Comment key={index} comment={comment.text} date={comment.date} />
               ))}
-              <div className="commentPost">
+
+              <div className="comment-controls">
+                <button className='suck' onClick={() => setVisibleCount(visibleCount + 4)}>Load More</button>
+                <button className='suck' onClick={() => setVisibleCount(4)}>Load Less</button>
+              </div>
+              <div className='commentPost'>
                 <input
                   type="text"
                   value={youWrote}
@@ -210,8 +216,9 @@ export function Post({ schoolname, postguy, date, postHeader, posttext, commentc
                   onChange={handleChange}
                   placeholder="Add a comment..."
                 />
-                <button onClick={DivCountGObbr}>Post</button>
+                <button className='post-btn' onClick={DivCountGObbr}>Post</button>
               </div>
+
             </motion.div>
           )}
         </AnimatePresence>

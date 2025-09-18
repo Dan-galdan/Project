@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "id": "cb5f",
+      "firstName": "da",
+      "lastName": "da",
+      "email": "da",
+      "password": "da",
+      "role": "student",
+      "createdAt": "2025-09-18T01:00:44.288Z"
+    }
+  ]
+}

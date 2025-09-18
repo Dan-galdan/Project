@@ -11,7 +11,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 function Header() {
     const [shown, setShown] = useState(false);        // Profile menu
-    const [visible, setVisible] = useState(false);    // Login/Signup modal
+    const [visible, setVisible] = useState(true);    // Login/Signup modal
     const popupRef = useRef(null);
     const loginRef = useRef(null);
 
