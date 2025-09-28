@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node server.js",
+    "start:sqlite": "node server-sqlite.js"
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.5",
@@ -18,14 +20,16 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "framer-motion": "^12.15.0",
     "json-server": "^1.0.0-beta.3",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.18.1",
+    "mongoose": "^8.18.2",
     "motion": "^12.15.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
@@ -38,5 +42,18 @@
     "globals": "^16.0.0",
     "react-router-dom": "^7.6.1",
     "vite": "^6.3.5"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dan-galdan/Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dan-galdan/Project/issues"
+  },
+  "homepage": "https://github.com/Dan-galdan/Project#readme"
 }
